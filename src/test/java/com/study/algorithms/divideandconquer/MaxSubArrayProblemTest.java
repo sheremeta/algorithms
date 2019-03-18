@@ -1,4 +1,4 @@
-package com.study.algorithm.divideandconquer;
+package com.study.algorithms.divideandconquer;
 
 import org.junit.Test;
 
