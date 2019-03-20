@@ -17,7 +17,7 @@ class MatrixMultiplicationProblem {
         int[][] c = new int[size][size];
 
         if (size == 1) {
-            return new int[][] { { a[ax0][ay0] * b[bx0][by0] } };
+            return new int[][] { { a[ay0][ax0] * b[by0][bx0] } };
         }
 
         int mid = size / 2;
@@ -35,7 +35,7 @@ class MatrixMultiplicationProblem {
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                c[cx0 + i][cy0 + j] = c1[i][j] + c2[i][j];
+                c[cy0 + j][cx0 + i] = c1[j][i] + c2[j][i];
             }
         }
     }
