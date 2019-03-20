@@ -22,10 +22,21 @@ class MatrixMultiplicationProblem {
 
         int mid = size / 2;
 
-        sum(c, 0, 0, divideAndConquer(a, ax0, ay0, b, bx0, by0, mid), divideAndConquer(a, ax0 + mid, ay0, b, bx0, by0 + mid, mid));
-        sum(c, mid, 0, divideAndConquer(a, ax0, ay0, b, bx0 + mid, by0, mid), divideAndConquer(a, ax0 + mid, ay0, b, bx0 + mid, by0 + mid, mid));
-        sum(c, 0, mid, divideAndConquer(a, ax0, ay0 + mid, b, bx0, by0, mid), divideAndConquer(a, ax0 + mid, ay0 + mid, b, bx0, by0 + mid, mid));
-        sum(c, mid, mid, divideAndConquer(a, ax0, ay0 + mid, b, bx0 + mid, by0, mid), divideAndConquer(a, ax0 + mid, ay0 + mid, b, bx0 + mid, by0 + mid, mid));
+        sum(c, 0, 0,
+            divideAndConquer(a, ax0, ay0, b, bx0, by0, mid),
+            divideAndConquer(a, ax0 + mid, ay0, b, bx0, by0 + mid, mid));
+
+        sum(c, mid, 0,
+            divideAndConquer(a, ax0, ay0, b, bx0 + mid, by0, mid),
+            divideAndConquer(a, ax0 + mid, ay0, b, bx0 + mid, by0 + mid, mid));
+
+        sum(c, 0, mid,
+            divideAndConquer(a, ax0, ay0 + mid, b, bx0, by0, mid),
+            divideAndConquer(a, ax0 + mid, ay0 + mid, b, bx0, by0 + mid, mid));
+
+        sum(c, mid, mid,
+            divideAndConquer(a, ax0, ay0 + mid, b, bx0 + mid, by0, mid),
+            divideAndConquer(a, ax0 + mid, ay0 + mid, b, bx0 + mid, by0 + mid, mid));
 
         return c;
     }
