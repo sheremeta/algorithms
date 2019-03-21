@@ -13,7 +13,7 @@ public class ChipTestingProblemTest {
 
     @Test
     public void solve() {
-        CheckableChip chip = ChipTestingProblem.solve(asList(bad(), bad(), good(), good(), good(), good()));
+        CheckableChip chip = ChipTestingProblem.solve(asList(bad(), bad(), bad(), good(), good(), good(), good()));
 
         assertThat(chip.state()).isTrue();
     }
