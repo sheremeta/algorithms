@@ -8,6 +8,8 @@ public class MaxSubArrayProblemTest {
 
     @Test
     public void solve() {
-        assertThat(MaxSubArrayProblem.solve(new int[] { -1, 2, 3, 4, -10, 10, 12, -7, -9, 10 })).isEqualTo(22);
+        int result = MaxSubArrayProblem.solve(new int[] { -1, 2, 3, 4, -10, 10, 12, -7, -9, 10 });
+
+        assertThat(result).isEqualTo(22);
     }
 }
