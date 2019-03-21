@@ -17,4 +17,15 @@ public class IntegersTest {
         assertThat(Integers.isPowerOfTwo(5)).isFalse();
         assertThat(Integers.isPowerOfTwo(4096)).isTrue();
     }
+
+    @Test
+    public void isOdd() {
+        assertThat(Integers.isEven(-1)).isFalse();
+        assertThat(Integers.isEven(0)).isFalse();
+        assertThat(Integers.isEven(2)).isTrue();
+        assertThat(Integers.isEven(3)).isFalse();
+        assertThat(Integers.isEven(4)).isTrue();
+        assertThat(Integers.isEven(5)).isFalse();
+        assertThat(Integers.isEven(6)).isTrue();
+    }
 }
