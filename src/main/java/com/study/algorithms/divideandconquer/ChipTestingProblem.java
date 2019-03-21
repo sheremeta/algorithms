@@ -4,9 +4,8 @@ import java.util.Collection;
 
 class ChipTestingProblem {
 
-    static <T extends Chip> T solve(Collection<T> chips) {
-
-        throw new IllegalStateException();
+    static <T extends Chip<T>> T solve(Collection<T> chips) {
+        return chips.iterator().next();
     }
 
     public interface Chip<T extends Chip> {
