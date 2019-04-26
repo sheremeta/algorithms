@@ -63,4 +63,38 @@ class Graphs {
 
         return result;
     }
+
+    static Collection<Integer> topologicalSorting(Map<Integer, List<Integer>> adj) {
+        Set<Integer> visited = new HashSet<>();
+        Stack<Integer> stack = new Stack<>();
+
+        LinkedList<Integer> result = new LinkedList<>();
+
+        for (Integer vertex : adj.keySet()) {
+            if (!visited.contains(vertex)) {
+
+                visited.add(vertex);
+                stack.push(vertex);
+
+                while (!stack.empty()) {
+                    Integer current = stack.pop();
+
+                    if (current > 0) {
+                        stack.push(-current);
+
+                        for (Integer adjVertex : adj.get(current)) {
+                            if (!visited.contains(adjVertex)) {
+                                stack.push(adjVertex);
+                                visited.add(adjVertex);
+                            }
+                        }
+                    } else {
+                        result.addFirst(-current);
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
 }
