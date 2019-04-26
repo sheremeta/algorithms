@@ -80,6 +80,7 @@ class Graphs {
                     Integer current = stack.pop();
 
                     if (current > 0) {
+                        //in such way we marked vertex as root
                         stack.push(-current);
 
                         for (Integer adjVertex : adj.get(current)) {
