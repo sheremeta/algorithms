@@ -10,23 +10,23 @@ class MaxSquareProblem {
 
     static int solve(int[][] matrix) {
 
-        int rows = matrix.length;
+        int rNum = matrix.length;
 
-        if (rows == 0) {
+        if (rNum == 0) {
             return 0;
         }
-        int columns = matrix[0].length;
+        int cNum = matrix[0].length;
 
-        int[][] squares = new int[rows + 1][columns + 1];
+        int[][] squares = new int[rNum + 1][cNum + 1];
 
         int max = 0;
 
-        for (int row = 0; row < rows; row++) {
-            for (int column = 0; column < columns; column++) {
-                if (matrix[row][column] == 1) {
-                    squares[row + 1][column + 1] = min(min(squares[row][column + 1], squares[row + 1][column]), squares[row][column]) + 1;
+        for (int i = 0; i < rNum; i++) {
+            for (int j = 0; j < cNum; j++) {
+                if (matrix[i][j] == 1) {
+                    squares[i + 1][j + 1] = min(min(squares[i][j + 1], squares[i + 1][j]), squares[i][j]) + 1;
 
-                    max = max(squares[row + 1][column + 1], max);
+                    max = max(squares[i + 1][j + 1], max);
                 }
             }
         }
