@@ -1,11 +1,11 @@
-package com.study.algorithms.challenge;
+package com.study.algorithms.leetcode;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 import static java.lang.StrictMath.pow;
 
 /*
-Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
+https://leetcode.com/problems/maximal-square/description/
  */
 class MaxSquareProblem {
 
