@@ -2,8 +2,6 @@ package com.study.algorithms.leetcode;
 
 import org.junit.Test;
 
-import com.study.algorithms.leetcode.MaxSquareProblem;
-
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class MaxSquareProblemTest {

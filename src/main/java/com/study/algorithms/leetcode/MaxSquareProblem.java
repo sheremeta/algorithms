@@ -20,7 +20,7 @@ class MaxSquareProblem {
 
         for (int[] row : matrix) {
             for (int j = 0; j < row.length; j++) {
-                if (row[j] == 0 && dp[j] == 1) {
+                if (row[j] == 0 && dp[j] > 0) {
                     maxSquare = max(maxSquare, maxSquare(dp));
 
                     dp[j] = 0;
