@@ -1,6 +1,7 @@
 package com.study.algorithms.leetcode;
 
-import static java.lang.Math.*;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 
 /*
 https://leetcode.com/problems/maximal-square/description/
@@ -23,13 +24,9 @@ class MaxSquareProblem {
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
                 if (matrix[row][column] == 1) {
-                    int square = min(squares[row][column + 1], squares[row + 1][column]);
+                    squares[row + 1][column + 1] = min(min(squares[row][column + 1], squares[row + 1][column]), squares[row][column]) + 1;
 
-                    square = min(square, squares[row][column]) + 1;
-
-                    squares[row + 1][column + 1] = square;
-
-                    max = max(square, max);
+                    max = max(squares[row + 1][column + 1], max);
                 }
             }
         }
