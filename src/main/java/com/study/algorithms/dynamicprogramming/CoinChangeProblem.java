@@ -24,7 +24,7 @@ class CoinChangeProblem {
         return ways[amount];
     }
 
-    static Collection<Integer> exchange(int coins[], int amount) {
+    static Collection<Integer> exchange(int[] coins, int amount) {
         int[] coinsPerAmount = new int[amount + 1];
         coinsPerAmount[0] = 0;
 
