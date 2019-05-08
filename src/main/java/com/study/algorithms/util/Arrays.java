@@ -4,11 +4,12 @@ import java.util.Stack;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import static java.lang.Integer.max;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 
 public class Arrays {
 
-    public static int maximumSlice(int[] arr) {
+    public static int maximumSliceSum(int[] arr) {
         int localMaximum = 0;
         int maximumSlice = 0;
 
@@ -18,6 +19,27 @@ public class Arrays {
         }
 
         return maximumSlice;
+    }
+
+    static int maximumSliceProduct(int[] arr) {
+        int posSumm = 1, negSumm = 1, maxSum = 1;
+
+        for (int value : arr) {
+            if (value > 0) {
+                posSumm *= value;
+                negSumm *= value;
+            } else if (value == 0) {
+                posSumm = 1;
+                negSumm = 1;
+            } else {
+                posSumm = max(1, negSumm * value);
+                negSumm = min(negSumm * value, value);
+            }
+
+            maxSum = max(posSumm, negSumm);
+        }
+
+        return maxSum;
     }
 
     static int islands(int[][] arr, int rows, int cols) {

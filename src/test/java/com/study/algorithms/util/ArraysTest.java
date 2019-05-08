@@ -8,7 +8,12 @@ public class ArraysTest {
 
     @Test
     public void maximumSlice() {
-        assertThat(Arrays.maximumSlice(new int[] { 5, -7, 3, 5, -2, 4, -1 })).isEqualTo(10);
+        assertThat(Arrays.maximumSliceSum(new int[] { 5, -7, 3, 5, -2, 4, -1 })).isEqualTo(10);
+    }
+
+    @Test
+    public void maximumSliceProduct() {
+        assertThat(Arrays.maximumSliceProduct(new int[] { 5, -7, 3, 5, -2, 4, -1 })).isEqualTo(8);
     }
 
     @Test
