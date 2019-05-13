@@ -16,4 +16,9 @@ public class CoinChangeProblemTest {
     public void exchange() {
         assertThat(CoinChangeProblem.exchange(new int[] { 0, 1, 5, 10 }, 36)).containsExactlyInAnyOrder(1, 5, 10, 10, 10);
     }
+
+    @Test
+    public void combinations() {
+        assertThat(CoinChangeProblem.combinations(new int[] { 1, 5, 10 }, 12)).hasSize(18);
+    }
 }

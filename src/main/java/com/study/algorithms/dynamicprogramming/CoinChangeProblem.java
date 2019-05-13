@@ -3,6 +3,7 @@ package com.study.algorithms.dynamicprogramming;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 import static java.lang.Integer.MAX_VALUE;
 
@@ -59,5 +60,31 @@ class CoinChangeProblem {
             tmpAmount = tmpAmount - coin;
         }
         return result;
+    }
+
+    static Collection<Collection<Integer>> combinations(int[] coins, int amount) {
+        List<Collection<Integer>> result = new LinkedList<>();
+
+        mutate(coins, amount, new Stack<>(), result);
+
+        return result;
+    }
+
+    private static void mutate(int[] coins, int amount, Stack<Integer> collector, Collection<Collection<Integer>> result) {
+        if (amount == 0) {
+            result.add(new LinkedList<>(collector));
+        }
+
+        if (amount < 0) {
+            return;
+        }
+
+        for (int coin : coins) {
+            collector.push(coin);
+
+            mutate(coins, amount - coin, collector, result);
+
+            collector.pop();
+        }
     }
 }
